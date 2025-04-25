@@ -126,7 +126,7 @@ const Hero = () => {
           <motion.img
             variants={textVariants}
             animate="scrollButton"
-            src="/scroll.png"
+            src={`${import.meta.env.BASE_URL}scroll.png`}
             alt=""
           />
         </motion.div>
@@ -144,10 +144,10 @@ const Hero = () => {
         animate={{ translateY: [-30, 0, -30, 0] }}
         transition={{ duration: 6, ease: 'easeInOut', repeat: Infinity, repeatDelay: 0, repeatType: 'mirror' }}
       >
-        <img src="/dev.png" alt="" />
+        <img src={`${import.meta.env.BASE_URL}dev.png`} alt="" />
       </motion.div>
       {/* <div className="imageContainer">
-        <img src="/dev.png" alt="" />
+        <img src={`${import.meta.env.BASE_URL}dev.png`} alt="" />
       </div> */}
     </div>
   );

@@ -17,16 +17,16 @@ const Navbar = () => {
         </motion.span>
         <div className="social">
           <a href="https://www.linkedin.com/in/hrishikesh-upadhyaya/" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin.svg" alt="" />
+            <img src={`${import.meta.env.BASE_URL}linkedin.svg`} alt="" />
           </a>
           <a href="https://github.com/HRKU" target="_blank" rel="noopener noreferrer">
-            <img src="/github.svg" alt="" style={{ backgroundColor:"white", borderRadius:"50%"}}/>
+            <img src={`${import.meta.env.BASE_URL}github.svg`} alt="" style={{ backgroundColor:"white", borderRadius:"50%"}}/>
           </a>
           <a href="mailto:chinum.upadhyaya@gmail.com" target="_blank" rel="noopener noreferrer">
-            <img src="/gmail.svg" alt="" />
+            <img src={`${import.meta.env.BASE_URL}gmail.svg`} alt="" />
           </a>
           {/* <a href="https://www.instagram.com/rizzzy_ritzz/" target="_blank" rel="noopener noreferrer">
-            <img src="/social icons/instagram.svg" alt="" style={{height:"40px", width:"40px"}}/>
+            <img src={`${import.meta.env.BASE_URL}social icons/instagram.svg`} alt="" style={{height:"40px", width:"40px"}}/>
           </a> */}
         </div>
       </div>

@@ -177,7 +177,7 @@ const Single = ({ item }) => {
             onClose={closeModal}
             onPrev={prevImg}
             onNext={nextImg}
-            closeIcon={<img src="/close.svg" alt="Close" />}
+            closeIcon={<img src={`${import.meta.env.BASE_URL}close.svg`} alt="Close" />}
           />
         )}
       </div>
