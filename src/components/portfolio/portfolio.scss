@@ -1,0 +1,542 @@
+@import "../../app.scss";
+
+.portfolio {
+  position: relative;
+
+  .progress {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding-top: 30px;
+    text-align: center;
+    background: linear-gradient(to right, #663399, #9370DB);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration-color: #9370DB;
+    font-size: 36px;
+    z-index: 10;
+    background-color: #181828;
+
+    @include mobile {
+      // padding-top: calc(100vh - 100px);
+      padding-top: 50px;
+      font-size: 24px;
+    }
+
+    .progressBar {
+      height: 10px;
+      background-color: white;
+    }
+  }
+
+  .cards-list {
+    position: relative;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .wrapper {
+      max-width: 1366px;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+
+      @include mobile {
+        flex-direction: column;
+      }
+
+      .imageContainer {
+        flex: 1;
+        max-width: 90%; // Adjust the width to make images smaller
+        margin: 0 auto; // Center the images
+        height: 100%; // Ensure no cropping
+        scale: 0.8;
+
+        @include mobile {
+          width: 90%; // Make it slightly smaller on mobile
+          max-height: 250px; // Reduce height limit
+        }
+
+        img {
+          width: 100%;
+          height: auto; // Maintain aspect ratio
+          object-fit: contain; // Prevents cropping
+
+          @include mobile {
+            max-height: 200px; // Further reduction for mobile
+          }
+        }
+      }
+
+
+      .textContainer {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 40px;
+
+        @include mobile {
+          transform: none !important;
+          padding: 10px;
+          align-items: center;
+          text-align: left;
+        }
+
+        ul {
+          list-style-type: disc;
+          padding-left: 20px;
+          margin-top: 10px;
+        }
+
+        li {
+          margin-bottom: 10px;
+          line-height: 1.4;
+          color: linear-gradient(to right, #663399, #9370DB);
+          font-size: 18px;
+
+          @include mobile {
+            font-size: 16px;
+          }
+        }
+
+        h2 {
+          font-size: 30px;
+
+          @include mobile {
+            font-size: 36px;
+          }
+        }
+
+        h2:hover {
+          color: orange;
+        }
+
+        p {
+          color: linear-gradient(to right, #663399, #9370DB);
+          ;
+          font-size: 20px;
+
+          @include mobile {
+            font-size: 16px;
+          }
+        }
+
+        button {
+          background-color: orange;
+          border: none;
+          border-radius: 10px;
+          padding: 10px;
+          width: 200px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.project-card {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.10), 0 2px 8px 0 rgba(100, 80, 200, 0.08);
+  transition: box-shadow 0.2s, transform 0.2s;
+
+  &:not(:first-child) {
+    margin-top: -2.2rem;
+  }
+
+  &:hover {
+    z-index: 2;
+    box-shadow: 0 8px 32px 0 rgba(100, 80, 200, 0.18), 0 4px 16px 0 rgba(100, 80, 200, 0.10);
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  background: #181828;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding:30px;
+  margin: 1.2rem 0;
+  max-width: 950px;
+  min-width: 0;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 14px;
+    padding: 0.7rem 0.2rem;
+  }
+}
+
+.project-card .imageContainer {
+  flex: 1;
+  max-width: 420px;
+  max-height: 320px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+
+  @include mobile {
+    max-width: 95vw;
+    max-height: 180px;
+  }
+
+  img {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #fff;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .img-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(30, 30, 60, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2em;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0.7;
+    transition: background 0.2s, opacity 0.2s;
+
+    &:hover {
+      background: #9370DB;
+      opacity: 1;
+    }
+  }
+
+  .img-nav.left {
+    left: 8px;
+  }
+
+  .img-nav.right {
+    right: 8px;
+  }
+}
+
+.project-card .textContainer {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: flex-start;
+  font-size: 1.04rem;
+
+  @include mobile {
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    font-size: 0.98rem;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin-bottom: 0.2rem;
+    color: #eaeaff;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  ul {
+    margin: 0 0 0.2rem 0;
+    padding-left: 1.1rem;
+
+    li {
+      font-size: 1em;
+      margin-bottom: 0.2rem;
+      color: #b0b0d0;
+
+      @include mobile {
+        font-size: 0.97em;
+      }
+    }
+  }
+}
+
+.github-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.6em 1.4em;
+  background: linear-gradient(90deg, #663399, #9370DB);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(100, 80, 200, 0.08);
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(90deg, #9370DB, #663399);
+    transform: translateY(-2px) scale(1.04);
+  }
+}
+
+.badges-row {
+  margin: 0.7rem 0 0.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35em 1em;
+  border-radius: 16px;
+  font-size: 0.98em;
+  font-weight: 500;
+  background: #23234a;
+  color: #fff;
+  border: 1px solid #3939a3;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tech-badge {
+  background: linear-gradient(90deg, #663399 60%, #9370DB 100%);
+  color: #fff;
+  border: none;
+}
+
+.skill-badge {
+  background: #22223b;
+  color: #ffb347;
+  border: 1px solid #ffb347;
+}
+
+.project-links {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.live-demo-btn {
+  display: inline-block;
+  padding: 0.6em 1.4em;
+  background: linear-gradient(90deg, #ffb347, #ff7e5f);
+  color: #181828;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(255, 180, 71, 0.08);
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(90deg, #ff7e5f, #ffb347);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+  }
+}
+
+@media (max-width: 700px) {
+  .badges-row {
+    gap: 0.3rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .badge {
+    font-size: 0.92em;
+    padding: 0.25em 0.7em;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 0.7rem;
+  }
+}
+
+.img-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 18, 34, 0.96);
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.img-modal-content {
+  position: relative;
+  background: #23234a;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(100, 80, 200, 0.22);
+  padding: 2.2rem 2.2rem 1.5rem 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 92vw;
+  max-height: 88vh;
+  animation: modalPop 0.25s;
+}
+
+@keyframes modalPop {
+  from {
+    transform: scale(0.96);
+    opacity: 0.7;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.img-modal-content img {
+  max-width: 80vw;
+  max-height: 75vh;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.18);
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.img-modal-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  border: none;
+  font-size: 2.3rem;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0.8;
+
+  &:hover {
+    background: #9370DB;
+    opacity: 1;
+  }
+}
+
+.img-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(30, 30, 60, 0.7);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0.8;
+  transition: background 0.2s, opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #9370DB;
+    opacity: 1;
+  }
+}
+
+.img-modal-nav.left {
+  left: -60px;
+}
+
+.img-modal-nav.right {
+  right: -60px;
+}
+
+.img-modal-counter {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background: rgba(30, 30, 60, 0.7);
+  padding: 0.3em 1em;
+  border-radius: 12px;
+  font-size: 1.1em;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+
+@media (max-width: 700px) {
+  .img-modal-content img {
+    max-width: 98vw;
+    max-height: 55vh;
+  }
+
+  .img-modal-content {
+    padding: 0.5rem;
+  }
+
+  .img-modal-nav.left {
+    left: 2px;
+  }
+
+  .img-modal-nav.right {
+    right: 2px;
+  }
+}
+
+.clickable-img {
+  transition: box-shadow 0.2s, transform 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 24px 0 #9370DB44;
+    transform: scale(1.03);
+  }
+}

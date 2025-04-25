@@ -1,0 +1,217 @@
+@import "../../app.scss";
+
+.contact {
+  min-height: 100vh;
+  height: 100%;
+  max-width: 1366px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  @include mobile {
+    min-height: unset;
+    height: auto;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    overflow: visible;
+    align-items: center;
+    flex-direction: column;
+  
+    width: 100%;
+    
+  }
+
+  .textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include mobile {
+      gap: 15px;
+      text-align: center;
+      align-items: center;
+      margin-top: -10px;
+    }
+
+    h1 {
+      font-size: 100px;
+      line-height: 88px;
+
+      @include mobile {
+        font-size: 36px;
+        margin-bottom: -20px;
+      }
+    }
+
+    span {
+      font-weight: 300;
+    }
+  }
+  .error {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+  .success {
+    color: green;
+    font-size: 0.9em;
+  }
+  
+
+  .formContainer {
+    flex: 1;
+    position: relative;
+    
+    @include mobile {
+      padding: 30px;
+      margin-top: -30px;
+      width: 100%;
+    }
+
+
+    .phoneSvg {
+      stroke: orange;
+      position: absolute;
+      margin: auto;
+      z-index: -1;
+    
+      
+    }
+
+    svg{
+      @include mobile{
+        width: 80%;
+        height: 70%;
+      }
+      
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      input,
+      textarea {
+        padding: 20px;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        border-radius: 5px;
+
+        @include mobile {
+          padding: 10px;
+        }
+      }
+
+      button {
+        padding: 20px;
+        border: none;
+        background-color: orange;
+        cursor: pointer;
+        font-weight: 500;
+        @include mobile {
+          padding: 10px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+.form-banner {
+  width: 100%;
+  padding: 1em 1.2em;
+  border-radius: 8px;
+  font-size: 1.08em;
+  font-weight: 500;
+  margin-bottom: 1em;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+.success-banner {
+  background: #1e2e1e;
+  color: #6ee7b7;
+  border: 1.5px solid #6ee7b7;
+}
+.error-banner {
+  background: #2e1e1e;
+  color: #ffb4b4;
+  border: 1.5px solid #ffb4b4;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.1em;
+  position: relative;
+}
+
+input, textarea {
+  padding: 1.1em 1em;
+  background: #23234a;
+  border: 1.5px solid #3939a3;
+  color: #fff;
+  border-radius: 7px;
+  font-size: 1.08em;
+  margin-bottom: 0.1em;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  &:focus {
+    border: 1.5px solid #9370DB;
+    box-shadow: 0 2px 8px #9370db33;
+  }
+  &::placeholder {
+    color: #b0b0d0;
+    opacity: 1;
+  }
+}
+
+.field-error {
+  color: #ffb4b4;
+  font-size: 0.98em;
+  margin-top: 0.1em;
+  margin-left: 0.2em;
+  font-weight: 500;
+}
+
+button[type="submit"] {
+  padding: 1em 0;
+  border: none;
+  background: linear-gradient(90deg, #663399, #9370DB);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5em;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(100,80,200,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover:not(:disabled) {
+    background: linear-gradient(90deg, #9370DB, #663399);
+    transform: translateY(-2px) scale(1.03);
+  }
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.loader {
+  width: 1.5em;
+  height: 1.5em;
+  border: 3px solid #fff;
+  border-top: 3px solid #9370DB;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

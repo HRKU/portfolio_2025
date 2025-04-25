@@ -1,0 +1,105 @@
+@import "../../app.scss";
+
+.resume{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 400px;
+}
+
+h1{
+    max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 36px;
+  background: linear-gradient(to right, #663399, #9370DB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration-color: #9370DB;
+}
+
+.about-card {
+  background: #181828;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: #22223b;
+  border: 3px solid #9370DB;
+  @include mobile {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.about-intro {
+  font-size: 1.15rem;
+  color: #b0b0d0;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  @include mobile {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+.about-resume {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  @include mobile {
+    align-items: center;
+  }
+  h2 {
+    color: #9370DB;
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.resume-btn {
+  display: inline-block;
+  padding: 0.7em 1.6em;
+  background: linear-gradient(90deg, #663399, #9370DB);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(100,80,200,0.08);
+  cursor: pointer;
+  &:hover {
+    background: linear-gradient(90deg, #9370DB, #663399);
+    transform: translateY(-2px) scale(1.04);
+  }
+}

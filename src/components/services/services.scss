@@ -1,0 +1,402 @@
+@import "../../app.scss";
+.services {
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 50px;
+
+  @include mobile {
+    min-height: unset;
+    height: auto;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    overflow: visible;
+  }
+
+  .textContainer {
+    flex: 1;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+
+    @include mobile {
+      align-self: center;
+      text-align: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    p {
+      font-weight: 200;
+      font-size: 20px;
+      color: gray;
+      text-align: right;
+    }
+
+    hr {
+      width: 500px;
+      border: none;
+      border-top: 0.5px solid gray;
+
+      @include mobile {
+        width: 300px;
+      }
+    }
+  }
+  .titleContainer {
+    flex: 0; // Ensure it takes up only the necessary space
+ // Remove any extra margin
+  padding: 0;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    // margin-top: 0px;
+    position: relative; // Ensures title is positioned properly
+    // margin-bottom: 20px;
+
+    @include mobile {
+      width: 100%;
+      flex-direction: column; // Ensure it stacks vertically on mobile
+      text-align: center;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      margin-top: 60px;
+      margin-bottom: 40px;
+      justify-content: space-between;
+      width: 100%;
+
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      img {
+        width: 150px;
+        height: auto;
+        border-radius: 10px;
+        margin-left: 50px;
+        object-fit: contain;
+
+        @include mobile {
+          display: inline-block;
+          flex-direction: column;
+          align-items: center;
+          width: 100px;
+          margin: 0;
+          height: auto;
+        }
+      }
+      .title-content {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between; 
+        margin-left: 50px;
+        width: 90%; 
+
+        @include mobile {
+          margin: 0;
+          justify-content: center; // Center content on mobile
+          flex-direction: column; // Stack title and date vertically
+          gap: 5px; // Add space between title and date
+        }
+    
+        h1 {
+          margin: 0; 
+          flex-grow: 1;
+          text-decoration-color: white;
+        }
+    
+        .year-range {
+          margin-left: auto;
+          font-size: 18px;
+          margin-right: 20px;
+
+          @include mobile {
+            font-size: 18px;
+            margin-top: 5px;
+            width: 100%;
+          }
+        }
+      }
+
+      h1 {
+        font-size: 36px;
+        font-weight: 100;
+        font-size: 36px;
+        background: white;
+        background-clip: text;
+        color: transparent;
+        text-decoration-color: white;
+
+        @include mobile {
+          font-size: 24px;
+        }
+      }
+
+      h1:hover{
+        background: linear-gradient(to right, #663399, #9370DB);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-decoration-color: #9370DB;
+      }
+
+      h4 {
+
+        // font-size: 32px;
+        font-weight: 100;
+        align-self: flex-end;
+        
+
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+      h4:hover{
+        font-size: 36px;
+        background: linear-gradient(to right, #663399, #9370DB);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-decoration-color: #9370DB;
+      }
+
+      button {
+        width: 300px;
+        height: 100px;
+        border-radius: 50px;
+        background-color: orange;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+
+        @include mobile {
+          font-size: 16px;
+          width: 150px;
+          height: 50px;
+        }
+      }
+    }
+  }
+  .listContainer {
+    flex: 0;
+    display: flex;
+    max-width: 1366px;
+    padding: 0;
+    position: relative; // Ensures list stays in flow
+    margin-top: -50px;
+    margin-left: 40px;
+    margin-right: 20px;
+    
+    margin-bottom: 40px;
+    flex-wrap: wrap; // Adjust to wrap boxes if necessary
+    justify-content: left;
+
+    @include mobile {
+      flex-direction: column;
+      width: 95%;
+      margin-right: 40px;
+      margin-left: 25px;
+    }
+
+    .box {
+      padding: 20px;
+      border: 0.0px solid gray;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative; // Positioning for hover effect scaling
+      // margin: 0 15px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease; // Smooth transition effect
+
+      p:hover {
+        background-color: lightgray; // Background change on hover
+        color: black; // Text color change on hover
+        border-radius: 10px; // Rounded corners on hover
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); // Subtle shadow on hover
+        transform: scale(1.05); // Slight scale up effect on hover
+      }
+    
+      // Optional: Adding a box-shadow to the container for a subtle lift effect
+      &:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); // Shadow for the entire box
+        transform: translateY(-5px); // Slight upward movement of the box
+      }
+
+      @media (max-width: 768px) {
+
+        .box {
+          margin-left: 20px; /* Add padding from the right and left to create space */
+          width: auto; /* Allow the box to adjust based on its content */
+        }
+
+        p {
+          margin-right: 10px;
+          font-size: 12px;
+          width: auto;
+  }
+      }
+
+      button {
+        padding: 10px;
+        background-color: orange;
+        border: none;
+        cursor: pointer;
+
+        @include mobile {
+          background-color: transparent;
+          border: 1px solid orange;
+          border-radius: 5px;
+          color: orange;
+          width: 50%;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
+
+.experience-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.experience-card {
+  background: #181828;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+  padding: 2rem;
+  transition: box-shadow 0.2s;
+  border-left: 4px solid #9370DB;
+}
+
+.experience-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(100,80,200,0.15);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.exp-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.company {
+  display: block;
+  font-size: 1rem;
+  color: #b0b0d0;
+  margin-top: 0.2rem;
+}
+
+.exp-dates {
+  font-size: 1rem;
+  color: #a0a0c0;
+  font-weight: 500;
+  min-width: 120px;
+  text-align: right;
+}
+
+.experience-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.experience-card li {
+  margin-bottom: 0.5rem;
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .experience-card {
+    padding: 1rem;
+  }
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .exp-dates {
+    text-align: left;
+    min-width: unset;
+  }
+}
+
+.skillsContainer {
+  margin-top: 2rem;
+  h2 {
+    margin-bottom: 1rem;
+    color: #9370DB;
+  }
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    .skills-category {
+      min-width: 180px;
+      h3 {
+        color: orange;
+        margin-bottom: 0.5rem;
+      }
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        .skill-badge {
+          background: #181828;
+          color: #fff;
+          border-radius: 20px;
+          padding: 0.4em 1em;
+          font-size: 1em;
+          transition: background 0.2s, color 0.2s;
+          border: 1px solid #9370DB;
+          margin-bottom: 0.3em;
+          cursor: pointer;
+          &:hover {
+            background: #9370DB;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .skills-grid {
+      flex-direction: column;
+      gap: 1.2rem;
+      .skills-category {
+        min-width: unset;
+        h3 {
+          font-size: 1.1em;
+        }
+        .skills-list {
+          gap: 0.3rem;
+          .skill-badge {
+            font-size: 0.95em;
+            padding: 0.3em 0.7em;
+          }
+        }
+      }
+    }
+  }
+}
