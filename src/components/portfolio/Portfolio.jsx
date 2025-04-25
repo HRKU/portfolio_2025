@@ -6,7 +6,11 @@ const items = [
   {
     id: 0,
     title: "AI Meeting Notes Summarizer",
-    imgList: ["/ai-meeting-notes.png","/ai1.png","/ai2.png"],
+    imgList: [
+      import.meta.env.BASE_URL + "ai-meeting-notes.png",
+      import.meta.env.BASE_URL + "ai1.png",
+      import.meta.env.BASE_URL + "ai2.png"
+    ],
     desc: `
 • Web app for uploading audio, transcribing with Assemble AI, and generating meeting summaries and action items using Google Gemini AI.
 • Built with Next.js, TypeScript and TailwindCSS.
@@ -20,7 +24,12 @@ const items = [
   {
     id: 1,
     title: "Bakery Web App (HackerEarth JetBrains Competition)",
-    imgList: ["/bakery1.png","/bakery2.png","/bakery3.png","/bakery4.png"],
+    imgList: [
+      import.meta.env.BASE_URL + "bakery1.png",
+      import.meta.env.BASE_URL + "bakery2.png",
+      import.meta.env.BASE_URL + "bakery3.png",
+      import.meta.env.BASE_URL + "bakery4.png"
+    ],
     desc: `
 • Fully functional bakery website built with Angular 9, TypeScript, HTML, and CSS.
 • Features product listings, cart, and order management.
@@ -34,7 +43,7 @@ const items = [
   {
     id: 2,
     title: "Temple Management App",
-    imgList: ["/templeapp.png"],
+    imgList: [import.meta.env.BASE_URL + "templeapp.png"],
     desc: `
 • Developed a mobile-first app for temple management, including event organization and live attendance tracking using Firebase.
 • Built with Ionic (React), MongoDB, and Node.js.
